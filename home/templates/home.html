@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Agro Business{% endblock %}
+{% block 'page_title' %}Visão Geral{% endblock %}
+
+{% block 'body' %}
+
+{% if chart_data.categories %}
+
+<div class="col-xl-6">
+    <div class="card card-default" id="user-acquisition">
+      <div class="card-header border-bottom pb-0">
+        <h2>Talhões</h2>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div id="barchartlg1"></div>
+      </div>
+    </div>
+</div>
+
+<script>
+    var fieldsChart = {{ chart_data|safe }};
+</script>
+
+{% endif %}
+
+  {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Importar dados{% endblock %}
+{% block 'page_title' %}Importar dados de talhões{% endblock %}
+
+{% block 'body' %}
+
+<div class="row">
+    <div class="col-xl-6">
+      <!-- Basic Examples -->
+      <div class="card card-default">
+        <div class="card-header">
+          <h2>Importacão</h2>
+  
+        </div>
+        <div class="card-body">
+          <form action="{% url 'fields:import_fields' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+            <div class="form-group">
+              <label for="csv_file">Importacão de planilha csv</label>
+              <input type="file" class="form-control-file" id="csv_file" name="csv_file">
+            </div>
+            <div class="form-footer mt-6">
+              <button type="submit" class="btn btn-primary btn-pill">Importar</button>
+            </div>
+          </form>
+  
+        </div>
+      </div>
+  </div>
+
+  {% endblock %}
