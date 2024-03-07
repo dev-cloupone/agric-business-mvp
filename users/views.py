@@ -30,4 +30,4 @@ def user_settings(request):
     user.last_name = request.POST.get('lastName')
     user.email = request.POST.get('email')
     user.save()
-    return redirect('/')
+    return redirect('users:user_settings')
