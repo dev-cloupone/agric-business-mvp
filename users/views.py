@@ -15,7 +15,7 @@ def login(request):
         login_dj(request, user)
         return redirect("home")
     else:
-        return HttpResponse('usuario ou senha inválidos')
+        return redirect('/users/login')
         
 def logout(request):
     logout_dj(request)

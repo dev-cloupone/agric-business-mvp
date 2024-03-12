@@ -6,6 +6,10 @@
 
 {% block 'body' %}
 
+<script src="{% static 'js/sweetalert.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+
 <div class="card card-default">
     <div class="card-header">
       <h2 class="mb-5">Meu perfil</h2>
@@ -24,14 +28,14 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" value="{{ user.first_name }}">
+              <input type="text" class="form-control" id="firstName" name="firstName" value="{{ user.first_name }}" autocomplete="off">
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="form-group">
               <label for="lastName">Last name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" value="{{ user.last_name }}">
+              <input type="text" class="form-control" id="lastName" name="lastName" value="{{ user.last_name }}" autocomplete="off">
             </div>
           </div>
         </div>
@@ -52,11 +56,27 @@
         </div>-->
 
         <div class="d-flex justify-content-end mt-6">
-          <button type="submit" class="btn btn-primary mb-2 btn-pill">Atualizar perfil</button>
+          <button id="btn-show-sweetalert" type="submit" class="btn btn-primary mb-2 btn-pill" autocomplete="off" >Atualizar perfil
+          </button>
         </div>
 
       </form>
     </div>
   </div>
+
+<script>
+
+const btnShowSweetAlert = document.querySelector('#btn-show-sweetalert');
+btnShowSweetAlert.addEventListener('click', function() {
+Swal.fire(
+  "Good job!",
+  "You clicked the button!",
+  "success"
+  )
+});
+
+</script>
+
+
 
   {% endblock %}
