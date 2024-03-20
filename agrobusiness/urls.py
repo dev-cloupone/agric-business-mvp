@@ -7,7 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('users/', include(('users.urls', 'users'), namespace='users')),
-    path('fields/', include(('fields.urls', 'fields'), namespace='fields'))
+    path('fields/', include(('fields.urls', 'fields'), namespace='fields')),
+    path('activities/', include(('activities.urls', 'activities'), namespace='activities'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -31,11 +31,12 @@ def import_activities(request):
 
 @login_required
 def get(request):
-    activitiesList = Activities.objects.all()
+    activityList = Activity.objects.all()
+    print(len(activityList))
     return render(
         request,
         'get_activities.html',
         {
-            "activitiesList": activitiesList
+            "activityList": activityList
         }
     )
