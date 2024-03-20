@@ -595,12 +595,12 @@ pre code {
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
+    width: 960px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 1240px;
   }
 }
 .row {
@@ -5119,9 +5119,11 @@ a.badge-smoke:focus, a.badge-smoke.focus {
 }
 
 .alert-primary {
-  color: #ece2f9;
-  background-color: #9e6de0;
-  border-color: #9e6de0;
+  color: #ffffff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  padding:10px 0 10px 0px;
+  margin:auto;
 }
 .alert-primary hr {
   border-top-color: #9058dc;

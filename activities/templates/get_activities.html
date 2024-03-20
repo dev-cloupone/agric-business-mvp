@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Consulta de atividades{% endblock %}
+{% block 'page_title' %}Consulta de atividades{% endblock %}
+
+{% block 'body' %}
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card card-default">
+      <div class="card-header">
+        <h2>Talhões</h2>
+      </div>
+      <div class="card-body">
+        <div class="collapse" id="collapse-table-1">
+          <pre class="language-html mb-4">
+          </pre>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Hectare</th>
+              <th scope="col">Valor atividade</th>
+              <th scope="col">Valor total</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for activity in activitiesList %}
+              <tr>
+                <td>{{ activities.name }}</td>
+                <td>{{ activities.size }}</td>
+                <td>{{ activities.valueActivity }}</td>
+                <td>{{ activities.totalActivity }}</td>
+              </tr>
+            {% endfor %}
+           <!-- <tr>
+              <td scope="row">1</td>
+              <td>Lucia</td>
+              <td>Christ</td>
+            </tr>
+            <tr>
+              <td scope="row">2</td>
+              <td>Catrin</td>
+              <td>Seidl</td>
+            </tr>
+            <tr>
+              <td scope="row">3</td>
+              <td>Lilli</td>
+              <td>Kirsh</td>
+            </tr>
+            <tr>
+              <td scope="row">4</td>
+              <td>Else</td>
+              <td>Voigt</td>
+            </tr>
+            <tr>
+              <td scope="row">5</td>
+              <td>Ursel</td>
+              <td>Harms</td>
+            </tr>
+            <tr>
+              <td scope="row">6</td>
+              <td>Anke</td>
+              <td>Sauter</td>
+            </tr>
+            -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {% endblock %}

@@ -11,24 +11,31 @@
   <title>Agro - Login</title>
 
   <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-  <link href="{% static 'plugins/material/css/materialdesignicons.min.css' %}" rel="stylesheet" />
-  <link href="{% static 'plugins/simplebar/simplebar.css' %}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+    <link href="{% static 'plugins/material/css/materialdesignicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'plugins/simplebar/simplebar.css' %}" rel="stylesheet" />
 
   <!-- PLUGINS CSS STYLE -->
-  <link href="{% static 'plugins/nprogress/nprogress.css' %}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="{% static 'plugins/nprogress/nprogress.css' %}" rel="stylesheet" />
   
   <!-- MONO CSS -->
-  <link id="main-css-href" rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link id="main-css-href" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
   <!-- FAVICON -->
   <link href="{% static 'images/favicon.png' %}" rel="shortcut icon" />
 
-  <script src="{% static 'plugins/nprogress/nprogress.js' %}"></script>
+    <script src="{% static 'js/sweetalert.js' %}"></script>
+    <script src="{% static 'plugins/nprogress/nprogress.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
 
 </head>
-  <body class="bg-light-gray" id="body">
+  <body>
+        <div class="container">
+
+        </div>
+        <div class="bg-light-gray" id="body">
           <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
           <div class="d-flex flex-column justify-content-between">
             <div class="row justify-content-center">
@@ -70,6 +77,15 @@
                           </div>-->
 
                           <button type="submit" class="btn btn-primary btn-pill mb-4">Entrar</button>
+                            {% if messages%}
+                              {% for message in messages%}
+                                <div class="alert alert-primary" role="alert">
+                                {{ message }}
+                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                              {% endfor %}
+                            {% endif %}
                         </div>
                       </div>
                     </form>

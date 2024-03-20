@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as login_dj, logout as logout_dj
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 def login(request):
     if request.method == "GET":
@@ -15,12 +16,15 @@ def login(request):
         login_dj(request, user)
         return redirect("home")
     else:
+        messages.success(request, ("Usuário ou senha inválidos."))
         return redirect('/users/login')
-        
+
+
+
 def logout(request):
     logout_dj(request)
     return redirect('/users/login')
-    
+
 @login_required
 def user_settings(request):
     if request.method == "GET":
