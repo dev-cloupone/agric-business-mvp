@@ -24,6 +24,7 @@ def import_activities(request):
                     valueActivity=value_activity,
                     totalActivity=total_activity
                 )
+
             return redirect('/activities/get')
     else:
         form = CSVImportForm()
