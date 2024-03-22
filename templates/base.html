@@ -18,7 +18,7 @@
   <link href="{% static 'plugins/nprogress/nprogress.css' %}" rel="stylesheet" />
 
   <link href="{% static 'plugins/prism/prism.css' %}" rel="stylesheet" />
-  
+
   <!-- MONO CSS -->
   <link id="main-css-href" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
@@ -34,10 +34,10 @@
       NProgress.start();
 
     </script>
- 
+
     <div class="wrapper">
-      
-      
+
+
         <!-- ====================================
           ——— LEFT SIDEBAR WITH OUT FOOTER
         ===================================== -->
@@ -77,14 +77,26 @@
                   </li>
                   <li>
                     <a class="sidenav-item-link" href="{% url 'activities:import_activities' %}">
-                      <i class="bi bi-search"></i>
-                      <span class="nav-text">Consulta de talhões</span>
+                      <i class="bi bi-cloud-upload"></i>
+                      <span class="nav-text">Importar atividades</span>
                     </a>
                   </li>
                   <li>
-                    <a class="sidenav-item-link" href="{% url 'activity:get' %}">
+                    <a class="sidenav-item-link" href="{% url 'activities:get' %}">
                       <i class="bi bi-search"></i>
-                      <span class="nav-text">Consulta de talhões</span>
+                      <span class="nav-text">Consulta de atividades</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="{% url 'activities:import_activities' %}">
+                      <i class="bi bi-cloud-upload"></i>
+                      <span class="nav-text">Importar insumos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="{% url 'activities:get' %}">
+                      <i class="bi bi-search"></i>
+                      <span class="nav-text">Consulta de insumos</span>
                     </a>
                   </li>
               </ul>
@@ -104,13 +116,13 @@
           </div>
         </aside>
 
-      
+
 
       <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
       <div class="page-wrapper">
-        
+
           <!-- Header -->
           <header class="main-header" id="header">
             <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
@@ -180,7 +192,7 @@
 
                     <script src="{% static 'plugins/prism/prism.js' %}"></script>
                     <script src="{% static 'plugins/apexcharts/apexcharts.js' %}"></script>
-                    
+
                     <script src="{% static 'js/mono.js' %}"></script>
                     <script src="{% static 'js/chart.js' %}"></script>
                     <script src="{% static 'js/map.js' %}"></script>

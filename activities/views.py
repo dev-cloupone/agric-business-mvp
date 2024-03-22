@@ -14,28 +14,29 @@ def import_activities(request):
             csv_file = request.FILES['csv_file'].read().decode('utf-8').splitlines()
             csv_reader = csv.DictReader(csv_file)
             for row in csv_reader:
-                size = row['Hectare'].replace('.', '').replace(',', '.')
+                size = row['Tamanho'].replace('.', '').replace(',', '.')
+                value_activity = row['Valor atividade'].replace('.', '').replace(',', '.')
+                total_activity = row['Total atividade'].replace('.', '').replace(',', '.')
+                size = row['Tamanho']
                 Activity.objects.create(
                     name=row['Talhão'],
                     size=size,
-                    activity=activity,
-                    valueActivity=valueActivity,
-                    totalActivity=totalActivity
+                    valueActivity=value_activity,
+                    totalActivity=total_activity
                 )
-
             return redirect('/activities/get')
     else:
         form = CSVImportForm()
-    return render(request, 'import_csv.html', {'form': form})
+    return render(request, 'import_csv_activities.html', {'form': form})
 
 
 @login_required
 def get(request):
-    activitiesList = Activities.objects.all()
+    activity_list = Activity.objects.all()
     return render(
         request,
         'get_activities.html',
         {
-            "activitiesList": activitiesList
+            "activityList": activity_list
         }
     )

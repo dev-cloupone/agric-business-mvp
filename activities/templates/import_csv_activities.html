@@ -1,8 +1,8 @@
-% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block 'title' %}Importar dados{% endblock %}
-{% block 'page_title' %}Importar dados de talhões{% endblock %}
+{% block 'page_title' %}Importar dados de atividade{% endblock %}
 
 {% block 'body' %}
 
@@ -12,12 +12,12 @@
       <div class="card card-default">
         <div class="card-header">
           <h2>Importacão</h2>
-  
+
         </div>
         <div class="card-body">
-          <form action="{% url 'activities:import-activities' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+          <form action="{% url 'activities:import_activities' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
             <div class="form-group">
-              <label for="csv_file">Importacão de planilha csv</label>
+              <label for="csv_file" id="csv_label" name="csv_label">Importacão de planilha csv</label>
               <input type="file" class="form-control-file" id="csv_file" name="csv_file">
             </div>
             <div class="form-footer mt-6">

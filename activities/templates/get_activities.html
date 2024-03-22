@@ -28,12 +28,12 @@
             </tr>
           </thead>
           <tbody>
-            {% for activity in activitiesList %}
+            {% for activity in activityList %}
               <tr>
-                <td>{{ activities.name }}</td>
-                <td>{{ activities.size }}</td>
-                <td>{{ activities.valueActivity }}</td>
-                <td>{{ activities.totalActivity }}</td>
+                <td>{{ activity.name }}</td>
+                <td>{{ activity.size }}</td>
+                <td>{{ activity.valueActivity }}</td>
+                <td>{{ activity.totalActivity }}</td>
               </tr>
             {% endfor %}
            <!-- <tr>
