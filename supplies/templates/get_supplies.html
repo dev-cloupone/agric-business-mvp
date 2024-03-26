@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block 'title' %}Consulta de atividades{% endblock %}
-{% block 'page_title' %}Consulta de atividades{% endblock %}
+{% block 'title' %}Consulta de fornecimentos{% endblock %}
+{% block 'page_title' %}Consulta de fornecimentos{% endblock %}
 
 {% block 'body' %}
 
@@ -20,20 +20,23 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Hectare</th>
-              <th scope="col">Atividade</th>
-              <th scope="col">Valor atividade</th>
-              <th scope="col">Valor total</th>
+              <th scope="col">Talhão</th>
+              <th scope="col">Tamanho</th>
+              <th scope="col">Insumo por hectare</th>
+              <th scope="col">Valor insumo</th>
+              <th scope="col">Total insumo</th>
 
             </tr>
           </thead>
           <tbody>
-            {% for activity in activityList %}
+            {% for supplie in supplieList %}
               <tr>
-                <td>{{ activity.size }}</td>
-                <td>{{ activity.name }}</td>
-                <td>{{ activity.valueActivity }}</td>
-                <td>{{ activity.totalActivity }}</td>
+                <td>{{ supplie.name }}</td>
+                <td>{{ supplie.size}}</td>
+                <td>{{ supplie.sizeSupplie }}</td>
+                <td>{{ supplie.valueSupplie }}</td>
+                <td>{{ supplie.totalSupplie }}</td>
+
               </tr>
             {% endfor %}
            <!-- <tr>

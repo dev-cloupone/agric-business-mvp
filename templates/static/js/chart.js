@@ -1999,7 +1999,7 @@ if (lineChart4 !== null) {
 }
 
 /*======== 11.1 BAR CHART LARGE 01 ========*/
-var barChartLg1 = document.querySelector("#barchartlg1");
+var barChartLg1 = document.querySelector("#barchartlgFie");
 if (barChartLg1 !== null) {
   var barChartOptions1 = {
     chart: {
@@ -2060,6 +2060,7 @@ if (barChartLg1 !== null) {
   var items = document.querySelectorAll(
     "#user-acquisition .nav-underline-active-primary .nav-item"
   );
+
   items.forEach(function (item, index) {
     item.addEventListener("click", function () {
       if (index === 0) {
@@ -2111,6 +2112,238 @@ if (barChartLg1 !== null) {
     });
   });
 }
+
+
+var barChartLg1 = document.querySelector("#barchartlgAct");
+if (barChartLg1 !== null) {
+  var barChartOptions1 = {
+    chart: {
+      height: 275,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["#46c79e"],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        endingShape: "flat",
+        columnWidth: "55%",
+      },
+    },
+    legend: {
+      position: "bottom",
+      horizontalAlign: "left",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    series: activitiesChart.series,
+    xaxis: {
+      categories: activitiesChart.categories,
+    },
+    yaxis: {
+      show: true,
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      theme: "dark",
+      x: {
+        show: false,
+      },
+      y: {
+        formatter: function (val) {
+          return val;
+        },
+      },
+      marker: {
+        show: true,
+      },
+    },
+  };
+  var randerBarChartLg1 = new ApexCharts(barChartLg1, barChartOptions1);
+  randerBarChartLg1.render();
+
+  var items = document.querySelectorAll(
+    "#user-acquisition .nav-underline-active-primary .nav-item"
+  );
+
+  items.forEach(function (item, index) {
+    item.addEventListener("click", function () {
+      if (index === 0) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "Referral",
+            data: [76, 85, 79, 88, 87, 65],
+          },
+          {
+            name: "Direct",
+            data: [44, 55, 57, 56, 61, 58],
+          },
+          {
+            name: "Organic",
+            data: [35, 41, 36, 26, 45, 48],
+          },
+        ]);
+      } else if (index === 1) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "iamabdus.com/referral",
+            data: [66, 50, 35, 52, 52, 45],
+          },
+          {
+            name: "github.com/referral",
+            data: [49, 59, 75, 66, 15, 20],
+          },
+          {
+            name: "(direct)/(none)",
+            data: [55, 41, 65, 61, 53, 87],
+          },
+        ]);
+      } else if (index === 2) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "iamabdus.com",
+            data: [64, 64, 58, 45, 77, 53],
+          },
+          {
+            name: "tafcoder.com",
+            data: [85, 25, 17, 12, 74, 15],
+          },
+          {
+            name: "github.com",
+            data: [51, 48, 53, 47, 55, 63],
+          },
+        ]);
+      }
+    });
+  });
+}
+
+
+var barChartLg1 = document.querySelector("#barchartlgSup");
+if (barChartLg1 !== null) {
+  var barChartOptions1 = {
+    chart: {
+      height: 275,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["#46c79e"],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        endingShape: "flat",
+        columnWidth: "55%",
+      },
+    },
+    legend: {
+      position: "bottom",
+      horizontalAlign: "left",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    series: suppliesChart.series,
+    xaxis: {
+      categories: suppliesChart.categories,
+    },
+    yaxis: {
+      show: true,
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      theme: "dark",
+      x: {
+        show: false,
+      },
+      y: {
+        formatter: function (val) {
+          return val;
+        },
+      },
+      marker: {
+        show: true,
+      },
+    },
+  };
+  var randerBarChartLg1 = new ApexCharts(barChartLg1, barChartOptions1);
+  randerBarChartLg1.render();
+
+  var items = document.querySelectorAll(
+    "#user-acquisition .nav-underline-active-primary .nav-item"
+  );
+
+  items.forEach(function (item, index) {
+    item.addEventListener("click", function () {
+      if (index === 0) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "Referral",
+            data: [76, 85, 79, 88, 87, 65],
+          },
+          {
+            name: "Direct",
+            data: [44, 55, 57, 56, 61, 58],
+          },
+          {
+            name: "Organic",
+            data: [35, 41, 36, 26, 45, 48],
+          },
+        ]);
+      } else if (index === 1) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "iamabdus.com/referral",
+            data: [66, 50, 35, 52, 52, 45],
+          },
+          {
+            name: "github.com/referral",
+            data: [49, 59, 75, 66, 15, 20],
+          },
+          {
+            name: "(direct)/(none)",
+            data: [55, 41, 65, 61, 53, 87],
+          },
+        ]);
+      } else if (index === 2) {
+        randerBarChartLg1.updateSeries([
+          {
+            name: "iamabdus.com",
+            data: [64, 64, 58, 45, 77, 53],
+          },
+          {
+            name: "tafcoder.com",
+            data: [85, 25, 17, 12, 74, 15],
+          },
+          {
+            name: "github.com",
+            data: [51, 48, 53, 47, 55, 63],
+          },
+        ]);
+      }
+    });
+  });
+}
+
+
 
 /*======== 11.2 BAR CHART LARGE 02 ========*/
 var barChartLg2 = document.querySelector("#barchartlg2");

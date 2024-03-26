@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'users',
     'home',
     'fields',
-    'activities'
+    'activities',
+    'supplies'
 ]
 
 MIDDLEWARE = [

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import supplie
+from .models import Supplie
 
-admin.site.register(supplie)
+admin.site.register(Supplie)

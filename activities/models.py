@@ -7,7 +7,7 @@ class Activity(models.Model):
         default = uuid.uuid4,
         editable = False
     )
-    name = models.CharField(max_length=100)
     size = models.FloatField()
+    name = models.CharField(max_length=100)
     valueActivity = models.FloatField()
     totalActivity = models.FloatField()

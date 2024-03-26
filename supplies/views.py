@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import CSVImportForm
-from .models import supplie
+from .models import Supplie
 import csv
 
 
@@ -14,12 +14,11 @@ def import_supplies(request):
             csv_file = request.FILES['csv_file'].read().decode('utf-8').splitlines()
             csv_reader = csv.DictReader(csv_file)
             for row in csv_reader:
-                size = row['Tamanho'].replace('.', '').replace(',', '.')
-                size_supplie = row['Insumo por hectare'].replace('.', '').replace(',', '.')
-                value_supplie = row['Valor insumo'].replace('.', '').replace(',', '.')
-                total_supplie = row['Total insumo'].replace('.', '').replace(',', '.')
-                size = row['Tamanho']
-                Activity.objects.create(
+                size = float(row['Tamanho'].replace('.', '').replace(',', '.'))
+                size_supplie = float(row['Insumo por hectare'].replace('.', '').replace(',', '.'))
+                value_supplie = float(row['Valor insumo'].replace('.', '').replace(',', '.').replace('R$', ''))
+                total_supplie = float(row['Total insumo'].replace('.', '').replace(',', '.').replace('R$', ''))
+                Supplie.objects.create(
                     name=row['Talhão'],
                     size=size,
                     sizeSupplie=size_supplie,
@@ -34,7 +33,7 @@ def import_supplies(request):
 
 @login_required
 def get(request):
-    supplie_list = supplie.objects.all()
+    supplie_list = Supplie.objects.all()
     return render(
         request,
         'get_supplies.html',

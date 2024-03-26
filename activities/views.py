@@ -14,13 +14,13 @@ def import_activities(request):
             csv_file = request.FILES['csv_file'].read().decode('utf-8').splitlines()
             csv_reader = csv.DictReader(csv_file)
             for row in csv_reader:
-                size = row['Tamanho'].replace('.', '').replace(',', '.')
-                value_activity = row['Valor atividade'].replace('.', '').replace(',', '.')
-                total_activity = row['Total atividade'].replace('.', '').replace(',', '.')
-                size = row['Tamanho']
+                size = float(row['Tamanho'].replace('.', '').replace(',', '.'))
+                value_activity = float(row['Valor atividade'].replace('.', '').replace(',', '.').replace('R$', ''))
+                total_activity = float(row['Total atividade'].replace('.', '').replace(',', '.').replace('R$', ''))
+
                 Activity.objects.create(
-                    name=row['Talhão'],
                     size=size,
+                    name=row['Atividade'],
                     valueActivity=value_activity,
                     totalActivity=total_activity
                 )

@@ -6,7 +6,28 @@
 
 {% block 'body' %}
 
-{% if chart_data.categories %}
+<script src="{% static 'js/consult.js' %}"></script>
+
+
+<form class="form_selection" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p class="text-dark mb-4">Selecione o CSV que deseja importar.</p>
+  <label class="text-dark">Campo</label>
+  <select class="custom-select my-1 mr-sm-2 w-auto" id="inlineFormCustomSelectPref" name="campo">
+    <option selected disabled>Choose...</option>
+    <option value="fields">Talhão</option>
+    <option value="activities">Atividades</option>
+    <option value="supplies">Insumos</option>
+  </select>
+  <label class="text-dark">Arquivo CSV</label>
+  <label for="csv_file" id="csv_label">Importação de planilha csv</label>
+  <input type="file" class="form-control-file" id="csv_file" name="csv_file" onchange="updateFileName()">
+  <button type="submit" class="btn btn-primary btn-pill ml-2">Enviar</button>
+</form>
+
+{% if chart_data.fields.categories %}
+
+
 
 <div class="col-xl-6">
     <div class="card card-default" id="user-acquisition">
@@ -15,15 +36,53 @@
       </div>
 
       <div class="tab-content" id="myTabContent">
-        <div id="barchartlg1"></div>
+        <div id="barchartlgFie"></div>
       </div>
     </div>
 </div>
 
 <script>
-    var fieldsChart = {{ chart_data|safe }};
+    var fieldsChart = {{ chart_data.fields|safe }};
 </script>
 
 {% endif %}
 
-  {% endblock %}
+
+{% if chart_data.activities.categories %}
+<div class="col-xl-6">
+    <div class="card card-default" id="user-acquisition">
+      <div class="card-header border-bottom pb-0">
+        <h2>Atividades</h2>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div id="barchartlgAct"></div>
+      </div>
+    </div>
+</div>
+
+<script>
+    var activitiesChart = {{ chart_data.activities|safe }};
+</script>
+{% endif %}
+
+
+{% if chart_data.supplies.categories %}
+<div class="col-xl-6">
+    <div class="card card-default" id="user-acquisition">
+      <div class="card-header border-bottom pb-0">
+        <h2>Insumos</h2>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div id="barchartlgSup"></div>
+      </div>
+    </div>
+</div>
+
+<script>
+    var suppliesChart = {{ chart_data.supplies|safe }};
+</script>
+{% endif %}
+
+{% endblock %}

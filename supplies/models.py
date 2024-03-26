@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
 
-class supplie(models.Model):
+class Supplie(models.Model):
     id = models.UUIDField(
         primary_key = True,
         default = uuid.uuid4,

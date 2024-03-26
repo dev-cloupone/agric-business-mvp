@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block 'title' %}Importar dados{% endblock %}
+{% block 'title' %}Importar talhões{% endblock %}
 {% block 'page_title' %}Importar dados de talhões{% endblock %}
 
 {% block 'body' %}
+<script src="{% static 'js/consult.js' %}"></script>
+
 
 <div class="row">
     <div class="col-xl-6">
@@ -12,21 +14,19 @@
       <div class="card card-default">
         <div class="card-header">
           <h2>Importação</h2>
-  
         </div>
         <div class="card-body">
-          <form action="{% url 'fields:import_fields' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+          <form id="importForm" action="{% url 'fields:import_fields' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
             <div class="form-group">
-              <label for="csv_file" id="csv_label" name="csv_label">Escolher arquivo</label>
-              <input type="file" class="form-control-file" id="csv_file" name="csv_file">
+              <label for="csv_file" id="csv_label">Importação de planilha csv</label>
+              <input type="file" class="form-control-file" id="csv_file" name="csv_file" onchange="updateFileName()">
             </div>
             <div class="form-footer mt-6">
-              <button type="submit" class="btn btn-primary btn-pill">Importar</button>
+              <button type="submit" id="submitButton" class="btn btn-primary btn-pill" style="display: none;">Importar</button>
             </div>
           </form>
-  
         </div>
       </div>
   </div>
 
-  {% endblock %}
+{% endblock %}

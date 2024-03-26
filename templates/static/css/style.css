@@ -275,7 +275,6 @@ border-color:#6d9be0;
 color: #FFF;
 text-transform: uppercase;
 text-align: center;
-display: block;
 margin-top: 10px;
 cursor: pointer;
 border-radius:40px;
@@ -1227,6 +1226,7 @@ pre code {
   .col-lg-6 {
     flex: 0 0 50%;
     max-width: 50%;
+    width:900px;
   }
   .col-lg-7 {
     flex: 0 0 58.33333333%;
@@ -5093,7 +5093,7 @@ a.badge-smoke:focus, a.badge-smoke.focus {
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: -35px;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -8188,7 +8188,7 @@ button.bg-smoke:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 1.5625rem !important;
+
 }
 
 .pl-5,
@@ -11868,6 +11868,7 @@ button {
 }
 .card-default .card-header {
   padding-top: 1.875rem;
+  padding-left:3rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -12436,26 +12437,31 @@ code {
   color: #2f2f2f;
   font-size: 1.625rem;
   white-space: nowrap;
+  padding-bottom:2.5px;
 }
 @media (min-width: 768px) {
   .navbar .page-title {
     font-size: 1.625rem;
     max-width: 150px;
+    padding-bottom:2.5px;
   }
 }
 @media (min-width: 1200px) {
   .navbar .page-title {
     max-width: unset;
+    padding-bottom:2.5px;
   }
 }
 @media (max-width: 500px) {
   .navbar .page-title {
     font-size:1.20rem;
+    padding-bottom:2.5px;
   }
 }
 @media (max-width: 300px) {
   .navbar .page-title {
     font-size:12px;
+    padding-bottom:2.5px;
   }
 }
 
@@ -13500,7 +13506,7 @@ label {
 .app-brand .brand-name {
   color: #ffffff;
   font-size: 1.25rem;
-  margin-left: 0.31rem;
+  margin-right:15px;
 }
 
 /*  Nav menus Icon Styles */
@@ -17491,3 +17497,11 @@ html[dir=rtl] .sidebar li > a .caret:before {
   font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
+
+.form_selection{
+text-align:center;
+padding-bottom:30px;
+}
+.col-xl-6{
+text-align:bottom;
+}

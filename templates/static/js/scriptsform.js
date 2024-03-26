@@ -1,3 +1,5 @@
+//disabilita o botão de enviar ate que o usuário altere algum campo do formulário
+
 document.addEventListener("DOMContentLoaded", function() {
 
   var inputFields = document.querySelectorAll('input[type="text"], input[type="email"]');
@@ -21,3 +23,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
   checkFormChanges();
 });
+

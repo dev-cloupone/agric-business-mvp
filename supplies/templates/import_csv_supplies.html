@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'title' %}Importar dados{% endblock %}
-{% block 'page_title' %}Importar dados de atividade{% endblock %}
+{% block 'page_title' %}Importar dados de insumos{% endblock %}
 
 {% block 'body' %}
 <script src="{% static 'js/consult.js' %}"></script>
@@ -16,7 +16,7 @@
           <h2>Importação</h2>
         </div>
         <div class="card-body">
-          <form id="importForm" action="{% url 'activities:import_activities' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+          <form id="importForm" action="{% url 'supplies:import_supplies' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
             <div class="form-group">
               <label for="csv_file" id="csv_label">Importação de planilha csv</label>
               <input type="file" class="form-control-file" id="csv_file" name="csv_file" onchange="updateFileName()">
